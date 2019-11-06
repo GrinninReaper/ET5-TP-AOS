@@ -1,0 +1,29 @@
+Cmd for GET resources
+Invoke-RestMethod -Uri 'http://localhost:8000/data?nom=Toto' -Method Get -ContentType 'application/json' 
+
+Cmd for POST resources
+Invoke-RestMethod -Uri 'http://localhost:8000/data?name=Toto' -Method Post -ContentType 'application/json' 
+
+Cmd pour tester les méthodes du serveur
+Invoke-RestMethod -Uri 'http://localhost:8000/data/ADD?nom=toto' -Method Get -ContentType 'application/json' 
+Invoke-RestMethod -Uri 'http://localhost:8000/data/CHANGE?nom=num0&id=0' -Method Get -ContentType 'application/json' 
+Invoke-RestMethod -Uri 'http://localhost:8000/data/ID?id=toto' -Method Get -ContentType 'application/json' 
+Invoke-RestMethod -Uri 'http://localhost:8000/data/DEL?id=0' -Method Get -ContentType 'text/plain'
+
+Le client est dans le projet AOS_TP7Client. 
+Pour accéder aux liens à partir du serveur:
+	lancer App.java
+	Des exemples de liens sont:
+		http://localhost:8000/data?name=Toto
+		http://localhost:8000/data/ID?id=1
+		http://localhost:8000/data/ADD?nom=newName
+		http://localhost:8000/data/CHANGE?nom=changeName&id=0
+		http://localhost:8000/data/DEL?id=1
+
+Cmd pour telecharger les données à partir de swapi.co
+Invoke-RestMethod -Uri 'https://swapi.co/api/films' -Method Get -ContentType 'application/json' -OutFile films.json
+Invoke-RestMethod -Uri 'https://swapi.co/api/people' -Method Get -ContentType 'application/json' -OutFile people.json
+
+Les resultats de la partie 9 sont obtenus avec les liens
+http://localhost:8000/data/SWFilms
+http://localhost:8000/data/SWPeople
